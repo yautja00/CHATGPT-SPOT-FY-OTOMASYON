@@ -6,7 +6,7 @@ from flask import Flask, request, redirect, jsonify
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
-SCOPES = "playlist-modify-private playlist-modify-public playlist-read-private"
+SCOPES = "playlist-modify-private playlist-modify-public playlist-read-private user-read-recently-played user-top-read"
 DEFAULT_USER = "ahmet"
 
 PRESETS = {
@@ -477,6 +477,173 @@ def profile_reco():
         "targets_used": targets,
         "profile_snapshot": prof
     })
+# ===== Listening History Profile (recently-played + top-tracks) =====
+
+def _fetch_recent(sp, limit=50):
+    # Son dinlenen 50 parça (Spotify 50’ye kadar verir)
+    try:
+        res = sp.current_user_recently_played(limit=min(50, limit)) or {}
+        items = res.get("items", [])
+        ids = [it["track"]["id"] for it in items if it.get("track") and it["track"].get("id")]
+        return list(dict.fromkeys(ids))
+    except Exception:
+        return []
+
+def _fetch_top(sp, time_range="short_term", limit=50):
+    # Kişisel top parça listeleri: short_term (4 hafta), medium_term (6 ay), long_term (yıllar)
+    try:
+        res = sp.current_user_top_tracks(limit=min(50, limit), time_range=time_range) or {}
+        items = res.get("items", [])
+        ids = [t["id"] for t in items if t and t.get("id")]
+        return list(dict.fromkeys(ids))
+    except Exception:
+        return []
+
+def _audio_agg(sp, track_ids):
+    if not track_ids: return {}
+    feats=[]
+    for i in range(0, len(track_ids), 100):
+        chunk = track_ids[i:i+100]
+        feats_chunk = sp.audio_features(chunk) or []
+        feats += [f for f in feats_chunk if f]
+        time.sleep(0.05)
+    if not feats: return {}
+    keys = ["energy","danceability","valence","instrumentalness","tempo"]
+    out={}
+    for k in keys:
+        vals = [f.get(k) for f in feats if f.get(k) is not None]
+        if not vals: continue
+        if k == "tempo":
+            vals = [max(60.0, min(200.0, float(v))) for v in vals]
+        out[k] = sum(vals)/len(vals)
+    out["tracks_analyzed"] = len(feats)
+    return out
+
+def _history_profile(sp):
+    recent = _fetch_recent(sp, 50)
+    top_s  = _fetch_top(sp, "short_term", 50)
+    top_m  = _fetch_top(sp, "medium_term", 50)
+    top_l  = _fetch_top(sp, "long_term", 50)
+    uniq_ids = list(dict.fromkeys(recent + top_s + top_m + top_l))
+    agg = _audio_agg(sp, uniq_ids)
+    # Tohum tür çıkarımı – çok basit sezgisel
+    seeds=[]
+    e = agg.get("energy", 0.5); d = agg.get("danceability", 0.5); v = agg.get("valence", 0.5)
+    instr = agg.get("instrumentalness", 0.0)
+    if e>=0.7: seeds += ["edm","dance-pop","electropop","rock"]
+    elif e<=0.35: seeds += ["lofi","ambient","piano","acoustic"]
+    else: seeds += ["indie","indie-pop","chill","downtempo"]
+    if v>=0.6: seeds += ["pop"]
+    elif v<=0.3: seeds += ["sad"]
+    if instr>=0.5: seeds += ["instrumental","beats"]
+    agg["suggested_seeds"] = list(dict.fromkeys(seeds))[:5]
+    agg["recent_count"] = len(recent); agg["top_short"]=len(top_s); agg["top_medium"]=len(top_m); agg["top_long"]=len(top_l)
+    return agg
+
+@app.route("/listening_profile")
+def listening_profile():
+    user = _pick_user()
+    sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
+    prof = _history_profile(sp)
+    return jsonify({"ok": True, "user": user, "profile": prof})
+
+@app.route("/history_reco")
+def history_reco():
+    if not _check_secret(): 
+        return jsonify({"error":"Forbidden"}), 403
+    user = _pick_user()
+    sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
+
+    prof = _history_profile(sp)
+    seeds = prof.get("suggested_seeds") or ["indie","chill","pop"]
+    targets = {
+        "energy": prof.get("energy", 0.5),
+        "danceability": prof.get("danceability", 0.5),
+        "valence": prof.get("valence", 0.5),
+        "instrumentalness": prof.get("instrumentalness", 0.0)
+    }
+    size  = max(1, min(300, int(request.args.get("size", 40))))
+    ratio = max(0, min(100, int(request.args.get("ratio_tr", 20))))
+    public = _b(request.args.get("public", "0"), False)
+
+    mood = "focus" if targets.get("instrumentalness",0) >= 0.4 else ("gym" if targets.get("energy",0) >= 0.7 else "happy_pop")
+    name = f"{(user or 'Ahmet').capitalize()} – History Mix"
+
+    uris = _pool(sp, mood, size, ratio, targets_override=targets, extra_genres=seeds)
+    pid = _ensure_playlist(sp, name, public, desc="Auto-generated • from Listening History")
+    _replace(sp, pid, uris)
+    pl = sp.playlist(pid)
+    return jsonify({
+        "ok": True,
+        "created": pl["external_urls"]["spotify"],
+        "size": len(uris),
+        "seeds_used": seeds,
+        "targets_used": targets,
+        "profile_snapshot": prof
+    })
+# ===== AI Mood Rewriter (Rule-based v1) =====
+
+REWRITE_HINTS = [
+    # (aranan_kelime, etkisi)
+    ("yorgun",  {"energy": -0.2, "valence": -0.05, "instrumentalness": +0.2, "mood":"focus"}),
+    ("kahve",   {"energy": +0.1, "instrumentalness": +0.1, "mood":"focus"}),
+    ("huzun",   {"valence": -0.25, "energy": -0.1, "mood":"melancholy"}),
+    ("uzgun",   {"valence": -0.25, "energy": -0.1, "mood":"melancholy"}),
+    ("nostalji",{"valence": -0.05, "mood":"melancholy"}),
+    ("gece",    {"energy": +0.05, "danceability": +0.1, "mood":"night_drive"}),
+    ("araba",   {"energy": +0.05, "danceability": +0.1, "mood":"night_drive"}),
+    ("kosu",    {"energy": +0.25, "danceability": +0.2, "mood":"gym"}),
+    ("koşu",    {"energy": +0.25, "danceability": +0.2, "mood":"gym"}),
+    ("gym",     {"energy": +0.25, "danceability": +0.2, "mood":"gym"}),
+    ("mutlu",   {"valence": +0.25, "mood":"happy_pop"}),
+    ("romantik",{"valence": +0.2, "energy": -0.05, "mood":"happy_pop"}),
+    ("yuksek tempo", {"energy": +0.3, "danceability": +0.2}),
+    ("yüksek tempo", {"energy": +0.3, "danceability": +0.2}),
+]
+
+def clamp01(x): return max(0.0, min(1.0, x))
+
+def rewrite_text_to_params(text):
+    t = (_norm(text))
+    # başlangıç defaultları
+    out = {"mood": None, "targets": {"energy":0.5,"danceability":0.5,"valence":0.5,"instrumentalness":0.1}, "tr": None}
+    # anahtar kelime bazlı etkiler
+    for key, eff in REWRITE_HINTS:
+        if key in t:
+            if "mood" in eff and not out["mood"]:
+                out["mood"] = eff["mood"]
+            for k,v in eff.items():
+                if k == "mood": continue
+                if k not in out["targets"]: out["targets"][k] = 0.5
+                out["targets"][k] = clamp01(out["targets"][k] + v)
+    # explicit sayılar
+    m=re.search(r'(\\d{2,3})', t); size = int(m.group(1)) if m else 40
+    m=re.search(r'tr\\s*([0-9]{1,2}|100)', t); tr = int(m.group(1)) if m else None
+    private = any(x in t for x in ["private","gizli","prv"])
+    public  = any(x in t for x in ["public","acik","pub"])
+    if not out["mood"]:
+        # mapping'lerden bir hit yoksa, düşük riskli varsayılan
+        out["mood"] = "focus" if out["targets"]["instrumentalness"]>=0.4 else "happy_pop"
+    return {
+        "mood": out["mood"],
+        "targets": out["targets"],
+        "tr": tr,
+        "size": size,
+        "public": False if private else (True if public else True)
+    }
+
+@app.route("/rewrite")
+def rewrite_endpoint():
+    q = request.args.get("q") or ""
+    params = rewrite_text_to_params(q)
+    return jsonify({"ok": True, "rewritten": params})
+
+# NLP içinde kullanmak istersen: mapping hit yoksa rewriter'a düş
+# (Bunu /nlp route'unda, mapping bulamadığı durumda params = rewrite_text_to_params(q_raw) ile override edebilirsin.)
 
 if __name__ == "__main__":
     port=int(os.environ.get("PORT","5000"))
