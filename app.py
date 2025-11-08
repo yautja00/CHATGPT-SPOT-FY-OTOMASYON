@@ -336,6 +336,147 @@ def quick(code):
     name=_title(user, mood)
     try: return jsonify(_make(sp,name,mood,size,ratio,public))
     except Exception as e: return jsonify({"error":str(e)}),500
+# ===== Mood Memory: profile + recommend-from-profile =====
+
+def _is_our_playlist(name: str, user: str):
+    # Uygulamanın oluşturduğu ad şablonu: "Ahmet – Focus Lofi" vb.
+    prefix = f"{(user or 'Ahmet').capitalize()} – "
+    return isinstance(name, str) and name.startswith(prefix)
+
+def _list_recent_our_playlists(sp, user: str, max_playlists=10):
+    items = []
+    pl = sp.current_user_playlists(limit=50)
+    items += pl["items"]
+    while pl.get("next") and len(items) < 200:
+        pl = sp.next(pl)
+        items += pl["items"]
+    ours = [p for p in items if _is_our_playlist(p.get("name",""), user)]
+    # en yeni üstte kalsın
+    ours = sorted(ours, key=lambda p: p.get("tracks", {}).get("total", 0), reverse=True)[:max_playlists]
+    return ours
+
+def _playlist_track_ids(sp, pid: str, limit=500):
+    ids = []
+    res = sp.playlist_items(pid, limit=100)
+    while True:
+        for it in res["items"]:
+            tr = it.get("track")
+            if tr and tr.get("id"):
+                ids.append(tr["id"])
+                if len(ids) >= limit:
+                    return ids
+        if res.get("next"):
+            res = sp.next(res)
+        else:
+            break
+    return ids
+
+def _audio_profile(sp, track_ids):
+    # Spotify audio features → energy, danceability, valence, tempo (bpm), instrumentalness
+    if not track_ids:
+        return {}
+    feats = []
+    for chunk_start in range(0, len(track_ids), 100):
+        chunk = track_ids[chunk_start:chunk_start+100]
+        feats_chunk = sp.audio_features(chunk) or []
+        feats += [f for f in feats_chunk if f]
+        time.sleep(0.05)
+    if not feats:
+        return {}
+    keys = ["energy","danceability","valence","instrumentalness","tempo"]
+    agg = {}
+    for k in keys:
+        vals = [f.get(k) for f in feats if f.get(k) is not None]
+        if not vals:
+            continue
+        if k == "tempo":
+            # tempo normalizasyonu için 60-200 aralığına kırp
+            vals = [max(60.0, min(200.0, float(v))) for v in vals]
+        agg[k] = sum(vals) / len(vals)
+    agg["tracks_analyzed"] = len(feats)
+    return agg
+
+def _build_profile(sp, user: str):
+    pls = _list_recent_our_playlists(sp, user, max_playlists=10)
+    all_ids = []
+    names = []
+    for p in pls:
+        pid = p["id"]
+        names.append(p.get("name",""))
+        all_ids += _playlist_track_ids(sp, pid, limit=500)
+    all_ids = list(dict.fromkeys(all_ids))  # uniq
+    stats = _audio_profile(sp, all_ids)
+    stats["playlists_scanned"] = len(pls)
+    stats["playlist_names"] = names
+    # Profilden “seed genre” önerisi:
+    # energy/danceability/valence değerlerine göre basit bir liste
+    seeds = []
+    if stats.get("energy",0) >= 0.7:
+        seeds += ["edm","dance-pop","electropop","rock"]
+    elif stats.get("energy",0) <= 0.35:
+        seeds += ["lofi","ambient","piano","acoustic"]
+    else:
+        seeds += ["indie","indie-pop","chill","downtempo"]
+    if stats.get("valence",0) >= 0.6:
+        seeds += ["pop"]
+    elif stats.get("valence",0) <= 0.3:
+        seeds += ["sad"]
+    if stats.get("instrumentalness",0) >= 0.5:
+        seeds += ["instrumental","beats"]
+    stats["suggested_seeds"] = list(dict.fromkeys(seeds))[:5]
+    return stats
+
+@app.route("/profile")
+def profile_view():
+    user = _pick_user()
+    sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
+    prof = _build_profile(sp, user)
+    return jsonify({"ok": True, "user": user, "profile": prof})
+
+@app.route("/profile_reco")
+def profile_reco():
+    if not _check_secret(): 
+        return jsonify({"error":"Forbidden"}), 403
+    user = _pick_user()
+    sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
+
+    # profil + tohum + hedefler
+    prof = _build_profile(sp, user)
+    seeds = prof.get("suggested_seeds") or ["indie","chill","pop"]
+    targets = {
+        "energy": prof.get("energy", 0.5),
+        "danceability": prof.get("danceability", 0.5),
+        "valence": prof.get("valence", 0.5),
+        "instrumentalness": prof.get("instrumentalness", 0.0)
+    }
+
+    # parametreler
+    size = max(1, min(300, int(request.args.get("size", 40))))
+    ratio = max(0, min(100, int(request.args.get("ratio_tr", 20))))
+    public = _b(request.args.get("public", "0"), False)
+
+    # mood ismini “Profile Mix” gibi kullanalım
+    mood = "focus" if targets.get("instrumentalness",0) >= 0.4 else ("gym" if targets.get("energy",0) >= 0.7 else "happy_pop")
+    name = f"{(user or 'Ahmet').capitalize()} – Profile Mix"
+
+    # _pool’u tohum ve hedef override ile çağır
+    uris = _pool(sp, mood, size, ratio, targets_override=targets, extra_genres=seeds)
+    pid = _ensure_playlist(sp, name, public, desc="Auto-generated • from Mood Memory")
+    _replace(sp, pid, uris)
+    pl = sp.playlist(pid)
+    return jsonify({
+        "ok": True,
+        "user": user,
+        "created": pl["external_urls"]["spotify"],
+        "size": len(uris),
+        "seeds_used": seeds,
+        "targets_used": targets,
+        "profile_snapshot": prof
+    })
 
 if __name__ == "__main__":
     port=int(os.environ.get("PORT","5000"))
