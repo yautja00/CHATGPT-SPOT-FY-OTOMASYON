@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ahmet’s Smart Spotify</title>
+<style>
+  :root{--bg:#0b1020;--card:#121a35;--muted:#9aa4c7;--text:#e7ecff;--accent:#22d3ee;--accent2:#9333ea;--ok:#10b981;--err:#ef4444;--radius:14px}
+  *{box-sizing:border-box;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  body{margin:0;background:radial-gradient(1200px 600px at 20% -10%, #16204a 0%, transparent 60%),linear-gradient(180deg,#0b1020 0%, #0b1020 100%);color:var(--text)}
+  .wrap{max-width:960px;margin:24px auto;padding:16px}
+  .title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+  h1{font-size:22px;margin:0}
+  .card{background:var(--card);border:1px solid #1e2a57;border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:800px){.row{grid-template-columns:1fr}}
+  label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+  input,select,button,textarea{width:100%;border:1px solid #26346b;background:#0f1530;color:var(--text);padding:10px 12px;border-radius:10px;font-size:14px;outline:none}
+  input::placeholder,textarea::placeholder{color:#6f7bb1}
+  button{cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;font-weight:600}
+  .ghost{background:#0f1530;border:1px solid #26346b}
+  .pill{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid #26346b;background:#0f1530;color:#c4cbf3;font-size:12px}
+  .flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .section-title{font-weight:700;margin:2px 0 10px 0;font-size:14px;color:#cbd5ff}
+  .out{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0f1530;border:1px solid #26346b;border-radius:10px;padding:12px;max-height:320px;overflow:auto}
+  .hint{font-size:12px;color:#9aa4c7}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  @media (max-width:800px){.grid3{grid-template-columns:1fr}}
+  a.link{color:#a1f4ff;text-decoration:none;border-bottom:1px dotted #3bcad6}
+  .ok{color:var(--ok)} .err{color:var(--err)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="title">
+    <div class="logo"></div>
+    <h1>Ahmet’s Smart Spotify — Kontrol Paneli</h1>
+  </div>
+
+  <div class="card">
+    <div class="section-title">1) Bağlantı</div>
+    <div class="row">
+      <div>
+        <label>Kullanıcı (user)</label>
+        <input id="user" placeholder="ahmet" />
+      </div>
+      <div>
+        <label>Gizli anahtar (key) — tarayıcında saklanır</label>
+        <input id="key" placeholder="Ankara23+-" />
+      </div>
+    </div>
+    <div class="flex" style="margin-top:10px">
+      <button id="btnAuth">Spotify’a Yetki Ver (Authorize)</button>
+      <span class="hint">İlk kullanımda 1 kez bas; scope değiştiyse yine bas.</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">2) Basit Mod</div>
+    <div class="grid3">
+      <div>
+        <label>Mod (mood)</label>
+        <select id="mood">
+          <option value="focus">Focus Lofi</option>
+          <option value="night_drive">Night Drive</option>
+          <option value="gym">Gym</option>
+          <option value="happy_pop">Happy Pop</option>
+          <option value="melancholy">Melancholy</option>
+        </select>
+      </div>
+      <div>
+        <label>Şarkı sayısı</label>
+        <input id="size" type="number" min="5" max="150" value="40" />
+      </div>
+      <div>
+        <label>TR oranı (%)</label>
+        <input id="tr" type="number" min="0" max="100" value="20" />
+      </div>
+    </div>
+    <div class="flex" style="margin-top:10px">
+      <span class="pill"><input id="public" type="checkbox" checked> public</span>
+      <button id="btnSimple">Playlist Oluştur</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">3) Zekalı Mod (cümleyle)</div>
+    <label>Ör: “yagmurlu huzunlu aksam 30 private” veya “arabada yuksek tempo 40 public”</label>
+    <input id="nlpText" placeholder="yorgun kahve fokus 30 tr10 private" />
+    <div class="flex" style="margin-top:10px">
+      <button id="btnNlp">Cümleden Oluştur</button>
+      <span class="hint">Bu, /nlp endpoint’ini çağırır (mapping + rewriter kullanır).</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">4) Profil Tabanlı</div>
+    <div class="flex">
+      <button class="ghost" id="btnProfileView">Profilimi Göster</button>
+      <button id="btnProfileMix">Profile Mix Oluştur</button>
+      <button id="btnHistoryMix">History Mix Oluştur</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Sonuç</div>
+    <div id="out" class="out">Hazır.</div>
+    <div style="margin-top:8px" class="hint">
+      Sorun olursa önce “Authorize” de; sonra tekrar dene.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const $ = sel => document.querySelector(sel);
+  const host = window.location.origin;
+
+  function saveLocal(){
+    localStorage.setItem("ah_user", $("#user").value.trim());
+    localStorage.setItem("ah_key", $("#key").value.trim());
+  }
+  function loadLocal(){
+    $("#user").value = localStorage.getItem("ah_user") || "ahmet";
+    $("#key").value  = localStorage.getItem("ah_key")  || "";
+  }
+  function setOut(obj, ok=true){
+    const box = $("#out");
+    box.classList.remove("err","ok");
+    box.classList.add(ok ? "ok" : "err");
+    try{ box.textContent = typeof obj === "string" ? obj : JSON.stringify(obj, null, 2); }
+    catch(e){ box.textContent = obj; }
+  }
+  function openIfLink(resp){
+    if(resp && resp.link){ window.open(resp.link,"_blank"); }
+    if(resp && resp.created){ window.open(resp.created,"_blank"); }
+  }
+  async function call(path){
+    saveLocal();
+    const u = $("#user").value.trim();
+    const k = $("#key").value.trim();
+    if(!u){ setOut("user bos olamaz", false); return; }
+    if(!k){ setOut("key (HOOK_SECRET) girmen lazim", false); return; }
+    const url = `${host}${path}${path.includes("?")?"&":"?"}user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}`;
+    try{
+      const r = await fetch(url);
+      const j = await r.json();
+      setOut(j, !!j.ok && !j.error);
+      openIfLink(j);
+    }catch(e){ setOut("Baglanti hatasi: "+e.message, false); }
+  }
+
+  $("#btnAuth").onclick = ()=>{
+    saveLocal();
+    const u = $("#user").value.trim() || "ahmet";
+    window.open(`${host}/authorize?user=${encodeURIComponent(u)}`, "_blank");
+    setOut("Authorize sekmesi acildi. Spotify'da Allow de.", true);
+  };
+  $("#btnSimple").onclick = ()=>{
+    const mood = $("#mood").value;
+    const size = $("#size").value || 40;
+    const tr   = $("#tr").value || 20;
+    const pub  = $("#public").checked ? 1 : 0;
+    call(`/make_playlist?mood=${encodeURIComponent(mood)}&size=${encodeURIComponent(size)}&ratio_tr=${encodeURIComponent(tr)}&public=${encodeURIComponent(pub)}`);
+  };
+  $("#btnNlp").onclick = ()=>{
+    const q = $("#nlpText").value || "focus 30 tr10 private";
+    call(`/nlp?q=${encodeURIComponent(q)}`);
+  };
+  $("#btnProfileView").onclick = ()=>{
+    const u = $("#user").value.trim() || "ahmet";
+    window.open(`${host}/profile?user=${encodeURIComponent(u)}`, "_blank");
+  };
+  $("#btnProfileMix").onclick = ()=>{
+    call(`/profile_reco?size=40&ratio_tr=20&public=0`);
+  };
+  $("#btnHistoryMix").onclick = ()=>{
+    call(`/history_reco?size=40&ratio_tr=20&public=0`);
+  };
+
+  loadLocal();
+</script>
+</body>
+</html>
