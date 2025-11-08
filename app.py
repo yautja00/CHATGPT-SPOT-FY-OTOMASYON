@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os, time, random, re
+import os, time, random, re, json, unicodedata
 from flask import Flask, request, redirect, jsonify
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
 SCOPES = "playlist-modify-private playlist-modify-public playlist-read-private"
-DEFAULT_USER = "ahmet"  # user param gelmezse buna düşer
+DEFAULT_USER = "ahmet"
 
 PRESETS = {
     "night_drive": {"seed_genres": ["chill","synthwave","indie","electropop","downtempo"],
@@ -31,16 +31,39 @@ NON_TR_QUERIES = [
     'indie rock','ambient instrumental','piano instrumental'
 ]
 
-app = Flask(__name__)
+# ---------- yardımcılar ----------
+def _norm(s: str) -> str:
+    s = (s or "").lower().strip()
+    s = unicodedata.normalize("NFD", s).encode("ascii","ignore").decode("utf-8")
+    return " ".join(s.split())
 
-# ---------- Auth helpers (multi-user cache) ----------
+def _avg_dict(dicts):
+    if not dicts: return {}
+    keys=set().union(*[d.keys() for d in dicts])
+    out={}
+    for k in keys:
+        vals=[d[k] for d in dicts if k in d]
+        out[k]= sum(vals)/len(vals)
+    return out
+
+def _median(nums):
+    if not nums: return None
+    a=sorted(nums); n=len(a)
+    return (a[n//2] if n%2==1 else (a[n//2-1]+a[n//2])/2)
+
 def _oauth(user: str):
     cid = os.getenv("SPOTIPY_CLIENT_ID")
     secret = os.getenv("SPOTIPY_CLIENT_SECRET")
     redirect_uri = os.getenv("SPOTIPY_REDIRECT_URI")
     if not (cid and secret and redirect_uri):
         raise RuntimeError("Missing Spotify secrets")
-    cache_path = f"token_cache_{(user or DEFAULT_USER).lower()}"
+    cache_dir = os.getenv("SPOTIPY_CACHE_DIR", None)
+    cache_path = None
+    if cache_dir:
+        os.makedirs(cache_dir, exist_ok=True)
+        cache_path = os.path.join(cache_dir, f"token_cache_{(user or DEFAULT_USER).lower()}")
+    else:
+        cache_path = f"token_cache_{(user or DEFAULT_USER).lower()}"
     return SpotifyOAuth(scope=SCOPES, client_id=cid, client_secret=secret,
                         redirect_uri=redirect_uri, cache_path=cache_path)
 
@@ -73,9 +96,8 @@ def _uniq(xs):
         if x not in seen: seen.add(x); out.append(x)
     return out
 
-# ---------- Tracks ----------
 def _recommend(sp, seeds, targets, size):
-    uris=[]; 
+    uris=[]
     if size<=0: return uris
     g = seeds[:]; random.shuffle(g)
     batches = [g[i:i+5] for i in range(0,len(g),5)] or [g]
@@ -108,14 +130,23 @@ def _search(sp, queries, size, market="TR"):
         time.sleep(0.15)
     return uris[:size]
 
-def _pool(sp, mood, total, ratio_tr):
+def _pool(sp, mood, total, ratio_tr, targets_override=None, extra_genres=None):
     preset = PRESETS.get(mood)
     if not preset: raise ValueError(f"Unknown mood '{mood}'")
+    # seed’leri genişlet
+    seed = preset["seed_genres"][:]
+    if extra_genres:
+        seed = list(dict.fromkeys(seed + list(extra_genres)))[:5]
+    # targets override
+    targets = dict(preset.get("targets", {}))
+    if targets_override:
+        targets.update(targets_override)
+    # böl
     n_tr = int(total*(ratio_tr/100)); n_non = total - n_tr
-    non = _recommend(sp, preset["seed_genres"], preset.get("targets"), n_non)
+    non = _recommend(sp, seed, targets, n_non)
     tr  = _search(sp, TURKISH_QUERIES, n_tr, market="TR")
     if len(tr)<n_tr:
-        tr += _recommend(sp, ["turkish","anatolian-rock","turkish-pop"], preset.get("targets"), n_tr-len(tr))
+        tr += _recommend(sp, ["turkish","anatolian-rock","turkish-pop"], targets, n_tr-len(tr))
     combined = _uniq(non+tr)
     if len(combined)<total:
         combined = _uniq(combined + _search(sp, NON_TR_QUERIES, total-len(combined), market="TR"))
@@ -145,8 +176,8 @@ def _title(user, mood):
     base = (user or "Ahmet").capitalize()
     return f"{base} – {names.get(mood,'Auto Playlist')}"
 
-def _make(sp, name, mood, size, ratio_tr, public):
-    uris = _pool(sp, mood, size, ratio_tr)
+def _make(sp, name, mood, size, ratio_tr, public, targets_override=None, extra_genres=None):
+    uris = _pool(sp, mood, size, ratio_tr, targets_override=targets_override, extra_genres=extra_genres)
     desc = f"Auto-generated • mood={mood} • TR={ratio_tr}%"
     pid  = _ensure_playlist(sp, name, public, desc)
     _replace(sp, pid, uris)
@@ -155,7 +186,15 @@ def _make(sp, name, mood, size, ratio_tr, public):
             "link":pl["external_urls"]["spotify"],
             "size":len(uris),"mood":mood,"ratio_tr":ratio_tr,"public":public}
 
-# ---------- Routes ----------
+# Zekalı mapping (opsiyonel dosya)
+try:
+    with open("mood_mapping.json","r",encoding="utf-8") as f:
+        MOODMAP = json.load(f)
+except Exception:
+    MOODMAP = {}
+
+app = Flask(__name__)
+
 @app.route("/")
 def home():
     base=request.host_url.rstrip("/")
@@ -163,14 +202,14 @@ def home():
         "ok": True,
         "authorize": f"{base}/authorize?user=ali",
         "quick_example": f"{base}/quick/gym40?user=ali&key=YOUR_SECRET",
-        "nlp_example": f"{base}/nlp?user=ali&key=YOUR_SECRET&q=gym 40 tr10 private"
+        "nlp_example": f"{base}/nlp?user=ali&key=YOUR_SECRET&q=yagmurlu huzunlu aksam 30 private"
     })
 
 @app.route("/authorize")
 def authorize():
     user=_pick_user()
     auth=_oauth(user)
-    url = auth.get_authorize_url(state=user)  # state ile kullanıcıyı geri al
+    url = auth.get_authorize_url(state=user)
     return redirect(url, 302)
 
 @app.route("/callback")
@@ -209,33 +248,66 @@ def hook():
     try: return jsonify(_make(sp,name,mood,size,ratio,public))
     except Exception as e: return jsonify({"error":str(e)}),500
 
-# Doğal dil: /nlp?key=...&user=ali&q="gym 40 tr20 private"
 @app.route("/nlp")
 def nlp():
     if not _check_secret(): return jsonify({"error":"Forbidden"}),403
     user=_pick_user(); sp=_get_sp(user)
     if not sp: return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}),401
-    q=(request.args.get("q") or "").lower()
 
+    q_raw = request.args.get("q") or ""
+    q = q_raw.lower()
+    qn = _norm(q_raw)
+
+    # defaults
     mood="gym"; size=40; ratio=30; public=True
+
+    # SMART mapping hits
+    hits = [k for k in MOODMAP.keys() if k in qn]
+    smart_used = False
+    extra_genres = []
+    smart_targets = {}
+    smart_tr = None
+    smart_mood = None
+
+    if hits:
+        smart_used = True
+        smart_mood = MOODMAP[hits[0]].get("mood")
+        smart_targets = _avg_dict([MOODMAP[h].get("targets",{}) for h in hits])
+        tr_candidates = [MOODMAP[h].get("tr") for h in hits if MOODMAP[h].get("tr") is not None]
+        smart_tr = _median(tr_candidates)
+        for h in hits:
+            extra_genres += MOODMAP[h].get("extra_genres", [])
+        extra_genres = list(dict.fromkeys(extra_genres))[:5]
+
+    # legacy (kelime bazlı)
     if "focus" in q: mood="focus"
     elif "night" in q or "nd" in q or "gece" in q: mood="night_drive"
     elif "happy" in q or "pop" in q: mood="happy_pop"
-    elif "mel" in q or "huzun" in q: mood="melancholy"
+    elif "mel" in q or "huzun" in q or "mood" in q: mood="melancholy"
     elif "gym" in q or "spor" in q: mood="gym"
+
+    # smart override
+    if smart_used and smart_mood:
+        mood = smart_mood
 
     m=re.search(r'(\d{2,3})', q)
     if m: size=max(1,min(300,int(m.group(1))))
     m=re.search(r'tr\s*([0-9]{1,2}|100)', q)
     if m: ratio=max(0,min(100,int(m.group(1))))
+    elif smart_used and smart_tr is not None:
+        ratio = int(round(smart_tr))
+
     if "private" in q or "gizli" in q or "prv" in q: public=False
     if "public" in q or "acik" in q or "pub" in q: public=True
 
     name=_title(user, mood)
-    try: return jsonify(_make(sp,name,mood,size,ratio,public))
-    except Exception as e: return jsonify({"error":str(e)}),500
+    try: 
+        return jsonify(_make(sp,name,mood,size,ratio,public,
+                             targets_override=(smart_targets if smart_used else None),
+                             extra_genres=(extra_genres if smart_used else None)))
+    except Exception as e: 
+        return jsonify({"error":str(e)}),500
 
-# Kısa kodlar: /quick/gym40tr10prv?user=ali&key=...
 @app.route("/quick/<code>")
 def quick(code):
     if not _check_secret(): return jsonify({"error":"Forbidden"}),403
@@ -251,7 +323,7 @@ def quick(code):
     elif c.startswith("happy"): mood="happy_pop";  c=c[5:]
     elif c.startswith("mel"):   mood="melancholy"; c=c[3:]
 
-    digits="".join(ch for ch in c if ch.isdigit())
+    digits="".join(ch for ch in c if c.isdigit())
     if digits: size=max(1,min(300,int(digits)))
     if "prv" in c: public=False
     if "pub" in c: public=True
