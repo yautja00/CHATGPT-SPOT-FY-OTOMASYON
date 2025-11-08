@@ -5,7 +5,7 @@ import os, time, random, re, json, unicodedata
 from flask import Flask, request, redirect, jsonify, render_template
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
-
+import tempfile
 SCOPES = "playlist-modify-private playlist-modify-public playlist-read-private user-read-recently-played user-top-read"
 DEFAULT_USER = "ahmet"
 
@@ -122,13 +122,10 @@ def _oauth(user: str):
     redirect_uri = os.getenv("SPOTIPY_REDIRECT_URI")
     if not (cid and secret and redirect_uri):
         raise RuntimeError("Missing Spotify secrets")
-    cache_dir = os.getenv("SPOTIPY_CACHE_DIR", None)
-    cache_path = None
-    if cache_dir:
-        os.makedirs(cache_dir, exist_ok=True)
-        cache_path = os.path.join(cache_dir, f"token_cache_{(user or DEFAULT_USER).lower()}")
-    else:
-        cache_path = f"token_cache_{(user or DEFAULT_USER).lower()}"
+# her zaman yazilabilir sistem dizini (/tmp) kullan
+tmpdir = tempfile.gettempdir()  # Render'da /tmp döner
+cache_path = os.path.join(tmpdir, f"token_cache_{(user or DEFAULT_USER).lower()}.json")
+
     return SpotifyOAuth(scope=SCOPES, client_id=cid, client_secret=secret,
                         redirect_uri=redirect_uri, cache_path=cache_path)
 
