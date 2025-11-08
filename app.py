@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os, time, random, re, json, unicodedata
-from flask import Flask, request, redirect, jsonify
+from flask import Flask, request, redirect, jsonify, render_template
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -196,8 +196,12 @@ except Exception:
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-    base=request.host_url.rstrip("/")
+def ui_root():
+    return render_template("index.html")
+
+@app.route("/health")
+def health():
+    base = request.host_url.rstrip("/")
     return jsonify({
         "ok": True,
         "authorize": f"{base}/authorize?user=ali",
