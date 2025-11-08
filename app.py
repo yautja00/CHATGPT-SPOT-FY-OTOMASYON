@@ -31,11 +31,76 @@ NON_TR_QUERIES = [
     'indie rock','ambient instrumental','piano instrumental'
 ]
 
+# --- blend helper ---
+def _blend_targets(base, add, w):
+    out = dict(base)
+    add = add or {}
+    for k, v in add.items():
+        if v is None: 
+            continue
+        bv = out.get(k, 0.5)
+        out[k] = max(0.0, min(1.0, (1 - w) * bv + w * float(v)))
+    return out
+
 # ---------- yardımcılar ----------
 def _norm(s: str) -> str:
     s = (s or "").lower().strip()
     s = unicodedata.normalize("NFD", s).encode("ascii","ignore").decode("utf-8")
     return " ".join(s.split())
+# --- diversity filter (artist limiti + benzerlik korumasi) ---
+def _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True):
+    if not uris: 
+        return uris
+    tids = [u.split(":")[-1] for u in uris]
+    meta = sp.tracks(tids)["tracks"]
+    kept = []
+    count = {}
+    feats_cache = {}
+
+    def feat(tid):
+        if tid not in feats_cache:
+            try:
+                feats_cache[tid] = sp.audio_features([tid])[0]
+            except Exception:
+                feats_cache[tid] = None
+            time.sleep(0.02)
+        return feats_cache[tid]
+
+    import math
+    def cosine(v1, v2):
+        a = sum(x*y for x,y in zip(v1,v2))
+        n1 = math.sqrt(sum(x*x for x in v1)); n2 = math.sqrt(sum(y*y for y in v2))
+        return a / (n1*n2 + 1e-9)
+
+    for t, u in zip(meta, uris):
+        if not t: 
+            continue
+        aid = (t["artists"][0]["id"] if t.get("artists") else "na")
+        if count.get(aid, 0) >= max_per_artist:
+            continue
+        # benzerlik korumasi (son 15 ile karsilastir)
+        if sim_guard and kept:
+            f1 = feat(t["id"])
+            if f1:
+                v1 = [f1.get("energy"), f1.get("danceability"), f1.get("valence"), f1.get("instrumentalness")]
+                if None not in v1:
+                    similar = False
+                    for kt in kept[-15:]:
+                        f2 = feat(kt["id"])
+                        if not f2: 
+                            continue
+                        v2 = [f2.get("energy"), f2.get("danceability"), f2.get("valence"), f2.get("instrumentalness")]
+                        if None in v2: 
+                            continue
+                        if cosine(v1, v2) > 0.97:
+                            similar = True
+                            break
+                    if similar:
+                        continue
+        kept.append(t)
+        count[aid] = count.get(aid, 0) + 1
+
+    return ["spotify:track:" + x["id"] for x in kept]
 
 def _avg_dict(dicts):
     if not dicts: return {}
@@ -177,14 +242,23 @@ def _title(user, mood):
     return f"{base} – {names.get(mood,'Auto Playlist')}"
 
 def _make(sp, name, mood, size, ratio_tr, public, targets_override=None, extra_genres=None):
+    # havuzu oluştur
     uris = _pool(sp, mood, size, ratio_tr, targets_override=targets_override, extra_genres=extra_genres)
+
+    # ÇEŞİTLİLİK FİLTRESİ: aynı sanatçı ve kopya vibe'ı azalt
+    uris = _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True)[:size]
+
     desc = f"Auto-generated • mood={mood} • TR={ratio_tr}%"
     pid  = _ensure_playlist(sp, name, public, desc)
     _replace(sp, pid, uris)
     pl = sp.playlist(pid)
-    return {"ok":True,"name":pl.get("name"),
-            "link":pl["external_urls"]["spotify"],
-            "size":len(uris),"mood":mood,"ratio_tr":ratio_tr,"public":public}
+    return {"ok": True,
+            "name": pl.get("name"),
+            "link": pl["external_urls"]["spotify"],
+            "size": len(uris),
+            "mood": mood,
+            "ratio_tr": ratio_tr,
+            "public": public}
 
 # Zekalı mapping (opsiyonel dosya)
 try:
@@ -254,18 +328,19 @@ def hook():
 
 @app.route("/nlp")
 def nlp():
-    if not _check_secret(): return jsonify({"error":"Forbidden"}),403
-    user=_pick_user(); sp=_get_sp(user)
-    if not sp: return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}),401
+    if not _check_secret(): 
+        return jsonify({"error":"Forbidden"}), 403
+
+    user = _pick_user()
+    sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
 
     q_raw = request.args.get("q") or ""
     q = q_raw.lower()
     qn = _norm(q_raw)
 
-    # defaults
-    mood="gym"; size=40; ratio=30; public=True
-
-    # SMART mapping hits
+    # --- mevcut mapping mantigi ---
     hits = [k for k in MOODMAP.keys() if k in qn]
     smart_used = False
     extra_genres = []
@@ -283,34 +358,74 @@ def nlp():
             extra_genres += MOODMAP[h].get("extra_genres", [])
         extra_genres = list(dict.fromkeys(extra_genres))[:5]
 
-    # legacy (kelime bazlı)
+    # --- legacy kelime kontrolu (fallback) ---
+    mood = None
     if "focus" in q: mood="focus"
     elif "night" in q or "nd" in q or "gece" in q: mood="night_drive"
     elif "happy" in q or "pop" in q: mood="happy_pop"
     elif "mel" in q or "huzun" in q or "mood" in q: mood="melancholy"
     elif "gym" in q or "spor" in q: mood="gym"
-
-    # smart override
     if smart_used and smart_mood:
         mood = smart_mood
 
-    m=re.search(r'(\d{2,3})', q)
-    if m: size=max(1,min(300,int(m.group(1))))
-    m=re.search(r'tr\s*([0-9]{1,2}|100)', q)
-    if m: ratio=max(0,min(100,int(m.group(1))))
-    elif smart_used and smart_tr is not None:
-        ratio = int(round(smart_tr))
+    # --- sayisal parametreler ---
+    import re
+    size = 40
+    m = re.search(r'(\d{2,3})', q); 
+    if m: size = max(1, min(300, int(m.group(1))))
+    ratio = None
+    m = re.search(r'tr\s*([0-9]{1,2}|100)', q)
+    if m: ratio = max(0, min(100, int(m.group(1))))
+    public = True
+    if "private" in q or "gizli" in q or "prv" in q: public = False
+    if "public" in q or "acik" in q or "pub" in q: public = True
 
-    if "private" in q or "gizli" in q or "prv" in q: public=False
-    if "public" in q or "acik" in q or "pub" in q: public=True
+    # --- REWRITER: kural tabanli yorumlayici (varsa) ---
+    try:
+        params_rw = rewrite_text_to_params(q_raw)
+    except Exception:
+        params_rw = {"mood": None, "targets": {}, "tr": None, "size": size, "public": public}
 
-    name=_title(user, mood)
-    try: 
-        return jsonify(_make(sp,name,mood,size,ratio,public,
-                             targets_override=(smart_targets if smart_used else None),
+    # --- dinleme gecmisi profili (varsa) ---
+    try:
+        prof_hist = _history_profile(sp) or {}
+    except Exception:
+        prof_hist = {}
+
+    # --- hedefleri harmanla: mapping > rewriter > history ---
+    # baslangic tabani
+    targets = {"energy":0.5, "danceability":0.5, "valence":0.5, "instrumentalness":0.1}
+    # mapping agirlikli
+    if smart_targets:
+        targets = _blend_targets(targets, smart_targets, 0.8)
+    # rewriter katkisi
+    targets = _blend_targets(targets, (params_rw or {}).get("targets", {}), 0.4)
+    # history’den hafif destek
+    hist_targets = {
+        "energy":          prof_hist.get("energy", 0.5),
+        "danceability":    prof_hist.get("danceability", 0.5),
+        "valence":         prof_hist.get("valence", 0.5),
+        "instrumentalness":prof_hist.get("instrumentalness", 0.0),
+    }
+    targets = _blend_targets(targets, hist_targets, 0.2)
+
+    # mood yoksa tahmin et
+    if not mood:
+        mood = params_rw.get("mood") or ("focus" if targets.get("instrumentalness",0) >= 0.4 else "happy_pop")
+
+    # ratio (TR %) yoksa akilli varsayim
+    if ratio is None:
+        ratio = params_rw.get("tr") if params_rw.get("tr") is not None else (smart_tr if smart_tr is not None else 20)
+
+    # isim
+    name = _title(user, mood)
+
+    try:
+        return jsonify(_make(sp, name, mood, size, ratio, public,
+                             targets_override=targets,
                              extra_genres=(extra_genres if smart_used else None)))
-    except Exception as e: 
-        return jsonify({"error":str(e)}),500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route("/quick/<code>")
 def quick(code):
