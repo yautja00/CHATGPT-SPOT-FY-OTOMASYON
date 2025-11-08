@@ -1,0 +1,7189 @@
+{
+  "huzunlu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "uzgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "melankolik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kederli": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yalniz": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yapayalniz": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "icli": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "duygusal": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "karamsar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "icim_bos": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dertli": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yarali": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "aglamakli": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yorgun_ruh": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kalbi_kirik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "mutsuz": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "modum_dusuk": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "moralim_bozuk": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dalgindim": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dalgini": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ruh_hali_kotu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "bosluktayim": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ic_boslugu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kafam_dolu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "icim_sis": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sonbahar_ruhu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sonbahar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kis_aksami": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sisli": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "puslu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kapali_hava": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "bulutlu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yagmurlu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "william_fitzsimmons_modu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "akustik_sessiz": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "akustik_uzgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "lofi_uzgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yagmur_sesi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_araba": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "night_drive": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_surusu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "otoban": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "uzun_yol": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_modu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "yolculuk": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "yildizli_gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "ay_isigi": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_yağmuru": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "synth": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "synthwave": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "neo_noir": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "soguk_gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "mistik_gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "yol_uzun": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_enerji": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "focus": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "odak": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "ders": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "calisma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "konu_tekrar": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "tez": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "yaziyorum": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "okuyorum": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "yorgun": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "uykulu": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "kahve": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "kahve_fokus": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "kafe": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "kafede_calis": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "kutuphane": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "sakin": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "sessiz": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "not_alma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "uzun_okuma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "derin_calisma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "derin_odak": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "pomodoro": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "uyku_oncesi_sakin": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "meditasyon": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "nefes": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "rahatlama": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "lofi": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "piano": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "ambient": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "white_noise": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "gym": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "spor": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "agirlift": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "squat": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "deadlift": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "koşu": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "kosu": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "yuruyus_hizli": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "interval": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "hiit": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "kickbox": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "boks": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "ring": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "antrenman": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "pump": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "preworkout": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "motivasyon_yuksek": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "gaza_gel": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "set_ari": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "ter_at": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "crossfit": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "full_body": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "calis": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "yuksek_tempo": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "tempo_yuksek": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "enerjik": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "mutlu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "iyi_hisset": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "bahar": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "yaz": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "yaz_akşami": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "deniz_kenari": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "gunesli": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "arkadaslarla": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "parti": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "pop": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "dance_pop": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "eglence": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "gece_disari": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "flort": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "asik": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "kalp": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "romantik": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "dugun_havali": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "pazar_gunu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "hafta_sonu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "modum_yuksek": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "iyimser": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "umutlu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "neşeli": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "neseli": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "keyifli": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "sabah_gunesi": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "nostaljik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "80ler": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "90lar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "2000ler": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "eski_gunler": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "cocukluk": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "anilar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "retro": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "plak_sesi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "kaset": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "arabesk_duygusal": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "anatolian": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "eski_turkce": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "hafif_bati": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "eski_ask": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "aksam_yemegi": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "romantik_aksam": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "sarap": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "muma_isik": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "fine_dining": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "sofistike": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "caz_aksami": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "date": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "randevu": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "italyan_restoran": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "fransiz_bistro": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "sakin_aksam": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "meze_sohbet": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "flow": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "akış": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "akista_kal": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "kod_yaziyorum": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "tasarim": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "yazilim": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "brainstorm": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "uzun_yol_calisma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "sunum_hazirla": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "ic_bos": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "uzerimde_agirlik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yavas_ritim": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "akustik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "pencere_kenari": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "gece_yagmur": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ruhum_yorgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "dusunceli": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "hassas": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yarali_kalp": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "hayiflanma": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ic_cekis": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "efkar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "puslu_hava": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yorgan_altinda": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yalnizlik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yalniz_gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "sessiz_gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "dusuk_enerji": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "huzun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "karanlik_mod": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ayrilik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ic_acisi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "gozleri_dolu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yavas_yuruyus": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "eski_fotograflar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "hayal_kirikligi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "kis_ruhu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ruzgarlı_gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "karlı_gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "içli_turku": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "agriyan_kalp": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "asfalt": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "otoyol": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "uzun_far": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_ritmi": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_radyosu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_kent": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yalniz_surus": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "otoban_tek": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yağmur_cam": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "silecek_sesi": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "pulsar": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "neon": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_neon": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "soguk_rüzgar": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_sakin": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "trafik_az": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yol_hipnozu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "kavsaklar": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yokuş_inis": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "insomnia_gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "study": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "tekrar": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "hafiza": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "notlar": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "pdf_okuma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "makale": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "tez_yazma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "paper_reading": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "beyin_firtinasi": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "konsantrasyon": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "gürültü_engel": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "rain_noise": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "kafe_sesleri": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "barista_arkaplan": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "sakin_ritim": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "gamma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "delta": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "soft_piano": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "klasik_muzik": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "minimal": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "post_rock_instr": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "downtempo": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "uzun_odak": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "odak_uzun": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "warmup": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "isinma": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "core": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "plank": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "burpee": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "sprint": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "cardio": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "terlemeye_hazir": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "guc": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "power": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "motivasyon": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "ez": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "da_tomorrow": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "full_guc": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "zirve_set": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "setler": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "rep": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "superset": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "drop_set": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "pb_kir": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "rm_kos": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "zirve": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "bas_gaza": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "gaz": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "hizli_ritim": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "agresif": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "pump_hard": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "pazar_brunch": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "arkadas_bulusmasi": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "sahil_yuruyusu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "gunes": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "tatil_modu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "yaz_tatili": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "serotonin": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "dopamin": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "iyimserlik": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "bahar_cicek": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "park": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "gezinti": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "piknik": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "plaj": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "kumsal": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "eğlence": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "dans": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "dans_et": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "hisset": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "hafif": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "yuksel": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "pozitif": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "iyi_haber": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "kutlama": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "dogum_gunu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "yeni_is": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "terfi": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "sevinc": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "huzunlü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kederlı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "iclı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "icim bos": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dertlı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yaralı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "aglamaklı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yorgun ruh": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kalbi kirik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "modum dusuk": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "moralim bozuk": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dalginı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ruh hali kotu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ruh_hali_kotü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ic boslugu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ic_boslugü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kafam dolu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kafam_dolü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "icim sis": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sonbahar ruhu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sonbahar_ruhü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kis aksami": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kis_aksamı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sislı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "puslü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kapali hava": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "bulutlü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yagmurlü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "william fitzsimmons modu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "william_fitzsimmons_modü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "akustik sessiz": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "akustik uzgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "lofi uzgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yagmur sesi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yagmur_sesı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece araba": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "night drive": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece surusu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_surusü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "uzun yol": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece modu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_modü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yildizli gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "ay isigi": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "ay_isigı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece yağmuru": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_yağmurü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "neo noir": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "soguk gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "mistik gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "yol uzun": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece enerji": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic",
+      "electropop"
+    ]
+  },
+  "gece_enerjı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "konu tekrar": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "uykulü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kahve fokus": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "kafede calis": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "not alma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "uzun okuma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "derin calisma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "derin odak": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "pomodorö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "uyku oncesi sakin": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "lofı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "pianö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "white noise": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.25,
+      "instrumentalness": 0.6,
+      "danceability": 0.35,
+      "valence": 0.3
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient",
+      "piano"
+    ]
+  },
+  "koşü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kosü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yuruyus hizli": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "yuruyus_hizlı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "motivasyon yuksek": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "gaza gel": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "set ari": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "set_arı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ter at": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "full body": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "yuksek tempo": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "yuksek_tempö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "tempo yuksek": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8,
+      "valence": 0.55
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap",
+      "big-room",
+      "workout"
+    ]
+  },
+  "mutlü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "iyi hisset": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "yaz akşami": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "yaz_akşamı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "deniz kenari": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "deniz_kenarı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "guneslı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "partı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dance pop": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "gece disari": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "gece_disarı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dugun havali": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "dugun_havalı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "pazar gunu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "pazar_gunü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "hafta sonu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "hafta_sonü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "modum yuksek": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "umutlü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "neşelı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "neselı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "keyiflı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sabah gunesi": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 25,
+    "extra_genres": [
+      "pop",
+      "dance-pop",
+      "romantic"
+    ]
+  },
+  "sabah_gunesı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "eski gunler": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "retrö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "plak sesi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "plak_sesı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "arabesk duygusal": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "eski turkce": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "hafif bati": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "hafif_batı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "eski ask": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.4,
+      "valence": 0.45
+    },
+    "tr": 40,
+    "extra_genres": [
+      "retro",
+      "80s",
+      "turkish-rock",
+      "arabesk"
+    ]
+  },
+  "aksam yemegi": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "aksam_yemegı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "romantik aksam": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "muma isik": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "fine dining": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "caz aksami": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "caz_aksamı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "randevü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "italyan restoran": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "fransiz bistro": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "fransiz_biströ": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sakin aksam": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "meze sohbet": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.6,
+      "instrumentalness": 0.4
+    },
+    "tr": 15,
+    "extra_genres": [
+      "jazz",
+      "bossanova",
+      "chill"
+    ]
+  },
+  "akista kal": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "kod yaziyorum": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "uzun yol calisma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "sunum hazirla": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.35,
+      "danceability": 0.45,
+      "instrumentalness": 0.5
+    },
+    "tr": 10,
+    "extra_genres": [
+      "beats",
+      "downtempo"
+    ]
+  },
+  "ic bos": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "uzerimde agirlik": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yavas ritim": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "pencere kenari": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "pencere_kenarı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece yagmur": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ruhum yorgun": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "dusuncelı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yarali kalp": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ic cekis": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "puslu hava": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yorgan altinda": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "yalniz gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "sessiz gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "dusuk enerji": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "dusuk_enerjı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "karanlik mod": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ic acisi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "ic_acisı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gozleri dolu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "gozleri_dolü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yavas yuruyus": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "eski fotograflar": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "hayal kirikligi": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "hayal_kirikligı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "kis ruhu": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "kis_ruhü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "ruzgarlı gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "karlı gece": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "içli turku": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "içli_turkü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "agriyan kalp": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.25
+    },
+    "tr": 25,
+    "extra_genres": [
+      "acoustic",
+      "sad"
+    ]
+  },
+  "uzun far": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece ritmi": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_ritmı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece radyosu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece_radyosü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece kent": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yalniz surus": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "otoban tek": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yağmur cam": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "silecek sesi": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "silecek_sesı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gece neon": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "soguk rüzgar": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "gece sakin": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "trafik az": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yol hipnozu": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "yol_hipnozü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yokuş inis": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "insomnia gece": {
+    "mood": "night_drive",
+    "targets": {
+      "energy": 0.55,
+      "danceability": 0.6,
+      "valence": 0.35
+    },
+    "tr": 15,
+    "extra_genres": [
+      "synthwave",
+      "indie-electronic"
+    ]
+  },
+  "pdf okuma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "tez yazma": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "paper reading": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "beyin firtinasi": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "beyin_firtinası": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "gürültü engel": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "rain noise": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "kafe sesleri": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "kafe_seslerı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "barista arkaplan": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "sakin ritim": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "soft piano": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "soft_pianö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "klasik muzik": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "post rock instr": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "downtempö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "uzun odak": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "odak uzun": {
+    "mood": "focus",
+    "targets": {
+      "energy": 0.3,
+      "instrumentalness": 0.6
+    },
+    "tr": 10,
+    "extra_genres": [
+      "lofi",
+      "ambient"
+    ]
+  },
+  "cardiö": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "terlemeye hazir": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "da tomorrow": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "full guc": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "zirve set": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "drop set": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "pb kir": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "rm kos": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "bas gaza": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "hizli ritim": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "pump hard": {
+    "mood": "gym",
+    "targets": {
+      "energy": 0.9,
+      "danceability": 0.8
+    },
+    "tr": 0,
+    "extra_genres": [
+      "edm",
+      "trap"
+    ]
+  },
+  "pazar brunch": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "arkadas bulusmasi": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "arkadas_bulusması": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "sahil yuruyusu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "sahil_yuruyusü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "tatil modu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "tatil_modü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yaz tatili": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "yaz_tatilı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "bahar cicek": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "gezintı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "dans et": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "iyi haber": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "dogum gunu": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "dogum_gunü": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  },
+  "yeni is": {
+    "mood": "happy_pop",
+    "targets": {
+      "energy": 0.75,
+      "danceability": 0.75,
+      "valence": 0.85
+    },
+    "tr": 20,
+    "extra_genres": [
+      "pop",
+      "dance-pop"
+    ]
+  },
+  "terfı": {
+    "mood": "melancholy",
+    "targets": {
+      "energy": 0.3,
+      "valence": 0.2
+    },
+    "tr": 20,
+    "extra_genres": [
+      "sad",
+      "acoustic",
+      "rainy-day",
+      "lofi"
+    ]
+  }
+}
