@@ -479,6 +479,19 @@ def _after(resp):
     return resp
 
 # ====== ROUTES (UI) ======
+# --- GLOBAL JSON ERROR HANDLER ---
+@app.errorhandler(Exception)
+def _json_errors(e):
+    try:
+        # Render production'da HTML dökülmesin; her zaman JSON
+        from werkzeug.exceptions import HTTPException
+        if isinstance(e, HTTPException):
+            return jsonify({"ok": False, "error": e.description, "code": e.code}), e.code
+        return jsonify({"ok": False, "error": str(e)}), 500
+    except Exception:
+        # son çare
+        return ("", 500)
+
 # --- PROFIL ROUTE (hem /profile hem /profile/) ---
 @app.route("/profile")
 @app.route("/profile/")
@@ -608,28 +621,115 @@ def _extract_data_url_base64(data_url:str):
 
 @app.route("/nlp_create", methods=["POST"])
 def nlp_create():
-    if not _check_secret(): return jsonify({"error":"Forbidden"}), 403
-    user = request.args.get("user") or (request.get_json(silent=True) or {}).get("user") or DEFAULT_USER
+    # 1) Yetki kontrolu
+    if not _check_secret():
+        return jsonify({"ok": False, "error": "Forbidden"}), 403
+
+    # 2) Body'yi güvenli oku
+    body = request.get_json(silent=True)
+    if not isinstance(body, dict):
+        # HTML/text gelmiş olabilir; None ise {} kabul etme, açık hata ver
+        return jsonify({"ok": False, "error": "Invalid JSON body"}), 400
+
+    # 3) Kullanıcı & Spotify
+    user = (request.args.get("user") or body.get("user") or DEFAULT_USER).lower()
     sp = _get_sp(user)
     if not sp:
-        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
+        return jsonify({"ok": False, "error": "Not authorized. Open /authorize?user=<name> first.", "user": user}), 401
 
-    body = request.get_json(force=True, silent=True) or {}
-    q_raw = body.get("q","")
+    # 4) Parametreleri al (tür güvenliği ile)
+    q_raw = str(body.get("q") or "")
     desired_name = (body.get("name") or "").strip()
     desired_desc = (body.get("description") or "").strip()
     public = bool(body.get("public", True))
-    size = int(body.get("size", 40))
-    ratio = int(body.get("ratio_tr", 20))
-    max_per_artist = int(body.get("max_per_artist", 2))
+    try:
+        size = int(body.get("size", 40))
+    except Exception:
+        size = 40
+    try:
+        ratio = int(body.get("ratio_tr", 20))
+    except Exception:
+        ratio = 20
+    try:
+        max_per_artist = int(body.get("max_per_artist", 2))
+    except Exception:
+        max_per_artist = 2
     sim_guard = bool(body.get("sim_guard", True))
-    cover_data_url = body.get("cover_data_url")  # data:image/jpeg;base64,...
+    cover_data_url = body.get("cover_data_url")
 
-    # NLP
+    # 5) NLP parametreleri
     params = rewrite_text_to_params(q_raw)
-    mood = params.get("mood","happy_pop")
-    if body.get("mood"):  # UI zorla override ederse
-        mood = body.get("mood")
+    mood = body.get("mood") or params.get("mood") or "happy_pop"
+
+    # 6) Dinleme profilinden harman
+    try:
+        prof_hist = _history_profile(sp) or {}
+    except Exception:
+        prof_hist = {}
+    targets = _blend_targets(
+        {"energy":0.5,"danceability":0.5,"valence":0.5,"instrumentalness":0.1},
+        params.get("targets",{}), 0.7
+    )
+    hist_targets = {
+        "energy":          prof_hist.get("energy", 0.5),
+        "danceability":    prof_hist.get("danceability", 0.5),
+        "valence":         prof_hist.get("valence", 0.5),
+        "instrumentalness":prof_hist.get("instrumentalness", 0.0),
+    }
+    targets = _blend_targets(targets, hist_targets, 0.25)
+
+    # 7) İsim & açıklama önerisi
+    if not desired_name or not desired_desc:
+        sname, sdesc = _suggest_name_desc(mood, q_raw)[0]
+        if not desired_name: desired_name = sname
+        if not desired_desc: desired_desc = sdesc
+
+    # 8) Havuz ve filtre
+    ratio_eff = ratio if ("ratio_tr" in body) else (params.get("tr", 20))
+    size_eff = size  if ("size"    in body) else (params.get("size", 40))
+    size_eff = max(1, min(300, size_eff))
+    ratio_eff = max(0, min(100, ratio_eff))
+
+    uris = _pool(sp, mood, size_eff, ratio_eff, targets_override=targets, extra_genres=None)
+    uris = _filter_diversity(sp, uris, max_per_artist=max_per_artist, sim_guard=sim_guard)[:size_eff]
+
+    # 9) Playlist yaz
+    pid  = _ensure_playlist(sp, desired_name, public, desired_desc)
+    _replace(sp, pid, uris)
+
+    # 10) Kapak (opsiyonel) — her durumda JSON döndür
+    cover_result = None
+    if cover_data_url:
+        b64, err = _extract_data_url_base64(cover_data_url)
+        if err:
+            cover_result = {"ok": False, "reason": err}
+        else:
+            try:
+                sp.playlist_upload_cover_image(pid, b64)
+                cover_result = {"ok": True}
+            except Exception as e:
+                cover_result = {"ok": False, "reason": str(e)}
+
+    # 11) Cevap
+    try:
+        pl = sp.playlist(pid)
+        link = pl["external_urls"]["spotify"]
+        name_out = pl.get("name")
+    except Exception:
+        link = None
+        name_out = desired_name
+
+    return jsonify({
+        "ok": True,
+        "name": name_out,
+        "link": link,
+        "size": len(uris),
+        "mood": mood,
+        "ratio_tr": ratio_eff,
+        "public": public,
+        "description": desired_desc,
+        "cover": cover_result
+    })
 
 @app.errorhandler(404)
 def not_found(e):
