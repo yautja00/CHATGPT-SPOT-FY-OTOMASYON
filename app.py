@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os, time, random, re, json, unicodedata
+import os, time, random, re, json, unicodedata, tempfile
 from flask import Flask, request, redirect, jsonify, render_template
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
-import tempfile
+
 SCOPES = "playlist-modify-private playlist-modify-public playlist-read-private user-read-recently-played user-top-read"
 DEFAULT_USER = "ahmet"
 
@@ -36,7 +36,7 @@ def _blend_targets(base, add, w):
     out = dict(base)
     add = add or {}
     for k, v in add.items():
-        if v is None: 
+        if v is None:
             continue
         bv = out.get(k, 0.5)
         out[k] = max(0.0, min(1.0, (1 - w) * bv + w * float(v)))
@@ -47,9 +47,10 @@ def _norm(s: str) -> str:
     s = (s or "").lower().strip()
     s = unicodedata.normalize("NFD", s).encode("ascii","ignore").decode("utf-8")
     return " ".join(s.split())
+
 # --- diversity filter (artist limiti + benzerlik korumasi) ---
 def _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True):
-    if not uris: 
+    if not uris:
         return uris
     tids = [u.split(":")[-1] for u in uris]
     meta = sp.tracks(tids)["tracks"]
@@ -73,7 +74,7 @@ def _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True):
         return a / (n1*n2 + 1e-9)
 
     for t, u in zip(meta, uris):
-        if not t: 
+        if not t:
             continue
         aid = (t["artists"][0]["id"] if t.get("artists") else "na")
         if count.get(aid, 0) >= max_per_artist:
@@ -87,10 +88,10 @@ def _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True):
                     similar = False
                     for kt in kept[-15:]:
                         f2 = feat(kt["id"])
-                        if not f2: 
+                        if not f2:
                             continue
                         v2 = [f2.get("energy"), f2.get("danceability"), f2.get("valence"), f2.get("instrumentalness")]
-                        if None in v2: 
+                        if None in v2:
                             continue
                         if cosine(v1, v2) > 0.97:
                             similar = True
@@ -122,12 +123,18 @@ def _oauth(user: str):
     redirect_uri = os.getenv("SPOTIPY_REDIRECT_URI")
     if not (cid and secret and redirect_uri):
         raise RuntimeError("Missing Spotify secrets")
-# her zaman yazilabilir sistem dizini (/tmp) kullan
-tmpdir = tempfile.gettempdir()  # Render'da /tmp döner
-cache_path = os.path.join(tmpdir, f"token_cache_{(user or DEFAULT_USER).lower()}.json")
 
-    return SpotifyOAuth(scope=SCOPES, client_id=cid, client_secret=secret,
-                        redirect_uri=redirect_uri, cache_path=cache_path)
+    # her zaman yazılabilir sistem dizini (/tmp) kullan (Render’da /tmp)
+    tmpdir = tempfile.gettempdir()
+    cache_path = os.path.join(tmpdir, f"token_cache_{(user or DEFAULT_USER).lower()}.json")
+
+    return SpotifyOAuth(
+        scope=SCOPES,
+        client_id=cid,
+        client_secret=secret,
+        redirect_uri=redirect_uri,
+        cache_path=cache_path
+    )
 
 def _get_sp(user: str):
     auth = _oauth(user)
@@ -241,10 +248,8 @@ def _title(user, mood):
 def _make(sp, name, mood, size, ratio_tr, public, targets_override=None, extra_genres=None):
     # havuzu oluştur
     uris = _pool(sp, mood, size, ratio_tr, targets_override=targets_override, extra_genres=extra_genres)
-
     # ÇEŞİTLİLİK FİLTRESİ: aynı sanatçı ve kopya vibe'ı azalt
     uris = _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True)[:size]
-
     desc = f"Auto-generated • mood={mood} • TR={ratio_tr}%"
     pid  = _ensure_playlist(sp, name, public, desc)
     _replace(sp, pid, uris)
@@ -325,7 +330,7 @@ def hook():
 
 @app.route("/nlp")
 def nlp():
-    if not _check_secret(): 
+    if not _check_secret():
         return jsonify({"error":"Forbidden"}), 403
 
     user = _pick_user()
@@ -366,9 +371,8 @@ def nlp():
         mood = smart_mood
 
     # --- sayisal parametreler ---
-    import re
     size = 40
-    m = re.search(r'(\d{2,3})', q); 
+    m = re.search(r'(\d{2,3})', q)
     if m: size = max(1, min(300, int(m.group(1))))
     ratio = None
     m = re.search(r'tr\s*([0-9]{1,2}|100)', q)
@@ -390,14 +394,10 @@ def nlp():
         prof_hist = {}
 
     # --- hedefleri harmanla: mapping > rewriter > history ---
-    # baslangic tabani
     targets = {"energy":0.5, "danceability":0.5, "valence":0.5, "instrumentalness":0.1}
-    # mapping agirlikli
     if smart_targets:
         targets = _blend_targets(targets, smart_targets, 0.8)
-    # rewriter katkisi
     targets = _blend_targets(targets, (params_rw or {}).get("targets", {}), 0.4)
-    # history’den hafif destek
     hist_targets = {
         "energy":          prof_hist.get("energy", 0.5),
         "danceability":    prof_hist.get("danceability", 0.5),
@@ -439,7 +439,7 @@ def quick(code):
     elif c.startswith("happy"): mood="happy_pop";  c=c[5:]
     elif c.startswith("mel"):   mood="melancholy"; c=c[3:]
 
-    digits="".join(ch for ch in c if c.isdigit())
+    digits="".join(ch for ch in c if ch.isdigit())
     if digits: size=max(1,min(300,int(digits)))
     if "prv" in c: public=False
     if "pub" in c: public=True
@@ -452,6 +452,7 @@ def quick(code):
     name=_title(user, mood)
     try: return jsonify(_make(sp,name,mood,size,ratio,public))
     except Exception as e: return jsonify({"error":str(e)}),500
+
 # ===== Mood Memory: profile + recommend-from-profile =====
 
 def _is_our_playlist(name: str, user: str):
@@ -467,7 +468,7 @@ def _list_recent_our_playlists(sp, user: str, max_playlists=10):
         pl = sp.next(pl)
         items += pl["items"]
     ours = [p for p in items if _is_our_playlist(p.get("name",""), user)]
-    # en yeni üstte kalsın
+    # en yeni üstte kalsın (şimdilik parça sayısına göre)
     ours = sorted(ours, key=lambda p: p.get("tracks", {}).get("total", 0), reverse=True)[:max_playlists]
     return ours
 
@@ -525,7 +526,6 @@ def _build_profile(sp, user: str):
     stats["playlists_scanned"] = len(pls)
     stats["playlist_names"] = names
     # Profilden “seed genre” önerisi:
-    # energy/danceability/valence değerlerine göre basit bir liste
     seeds = []
     if stats.get("energy",0) >= 0.7:
         seeds += ["edm","dance-pop","electropop","rock"]
@@ -553,7 +553,7 @@ def profile_view():
 
 @app.route("/profile_reco")
 def profile_reco():
-    if not _check_secret(): 
+    if not _check_secret():
         return jsonify({"error":"Forbidden"}), 403
     user = _pick_user()
     sp = _get_sp(user)
@@ -593,6 +593,7 @@ def profile_reco():
         "targets_used": targets,
         "profile_snapshot": prof
     })
+
 # ===== Listening History Profile (recently-played + top-tracks) =====
 
 def _fetch_recent(sp, limit=50):
@@ -642,7 +643,7 @@ def _history_profile(sp):
     top_l  = _fetch_top(sp, "long_term", 50)
     uniq_ids = list(dict.fromkeys(recent + top_s + top_m + top_l))
     agg = _audio_agg(sp, uniq_ids)
-    # Tohum tür çıkarımı – çok basit sezgisel
+    # Tohum tür çıkarımı – basit sezgisel
     seeds=[]
     e = agg.get("energy", 0.5); d = agg.get("danceability", 0.5); v = agg.get("valence", 0.5)
     instr = agg.get("instrumentalness", 0.0)
@@ -667,7 +668,7 @@ def listening_profile():
 
 @app.route("/history_reco")
 def history_reco():
-    if not _check_secret(): 
+    if not _check_secret():
         return jsonify({"error":"Forbidden"}), 403
     user = _pick_user()
     sp = _get_sp(user)
@@ -701,10 +702,10 @@ def history_reco():
         "targets_used": targets,
         "profile_snapshot": prof
     })
+
 # ===== AI Mood Rewriter (Rule-based v1) =====
 
 REWRITE_HINTS = [
-    # (aranan_kelime, etkisi)
     ("yorgun",  {"energy": -0.2, "valence": -0.05, "instrumentalness": +0.2, "mood":"focus"}),
     ("kahve",   {"energy": +0.1, "instrumentalness": +0.1, "mood":"focus"}),
     ("huzun",   {"valence": -0.25, "energy": -0.1, "mood":"melancholy"}),
@@ -736,13 +737,15 @@ def rewrite_text_to_params(text):
                 if k == "mood": continue
                 if k not in out["targets"]: out["targets"][k] = 0.5
                 out["targets"][k] = clamp01(out["targets"][k] + v)
-    # explicit sayılar
-    m=re.search(r'(\\d{2,3})', t); size = int(m.group(1)) if m else 40
-    m=re.search(r'tr\\s*([0-9]{1,2}|100)', t); tr = int(m.group(1)) if m else None
+    # explicit sayılar (ESCAPE BUG FIXED)
+    m = re.search(r'(\d{2,3})', t)
+    size = int(m.group(1)) if m else 40
+    m = re.search(r'tr\s*([0-9]{1,2}|100)', t)
+    tr = int(m.group(1)) if m else None
     private = any(x in t for x in ["private","gizli","prv"])
     public  = any(x in t for x in ["public","acik","pub"])
     if not out["mood"]:
-        # mapping'lerden bir hit yoksa, düşük riskli varsayılan
+        # mapping yoksa, düşük riskli varsayılan
         out["mood"] = "focus" if out["targets"]["instrumentalness"]>=0.4 else "happy_pop"
     return {
         "mood": out["mood"],
