@@ -182,6 +182,7 @@
     fr.readAsDataURL(f);
   });
 
+ <script>
   async function postJSON(path, payload){
     saveLocal();
     const u = $("#user").value.trim();
@@ -191,11 +192,17 @@
     const url = `${host}${path}?user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}`;
     try{
       const r = await fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)});
-      const j = await r.json();
-      setOut(j, !!j.ok && !j.error);
-      openIfLink(j);
-    }catch(e){ setOut("Baglanti hatasi: "+e.message, false); }
+      const ct = r.headers.get("content-type") || "";
+      // Sunucu sleep/warmup/HTML hata sayfası döndürürse JSON parse etme
+      const data = ct.includes("application/json") ? await r.json() : { ok:false, error: await r.text() };
+      setOut(data, !!data.ok && !data.error);
+      openIfLink(data);
+    }catch(e){
+      setOut("Baglanti hatasi: "+e.message, false);
+    }
   }
+</script>
+
 
   // BUTTONS
   $("#btnAuth").onclick = ()=>{
