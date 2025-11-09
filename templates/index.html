@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ahmet’s Smart Spotify</title>
+<title>SpotYAI.ai</title>
 <style>
   :root{
     --bg:#0b1020;--card:#121a35;--muted:#9aa4c7;--text:#e7ecff;--accent:#22d3ee;--accent2:#9333ea;--ok:#10b981;--err:#ef4444;--radius:14px;
@@ -36,18 +36,50 @@
   .ok{color:var(--ok)} .err{color:var(--err)}
   .cover{width:120px;height:120px;border-radius:10px;object-fit:cover;border:1px solid color-mix(in oklab, var(--text) 15%, transparent)}
   .topbar{display:flex;align-items:center;gap:12px}
+
+  /* Fade-in animation for title */
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(-8px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+  .fadein {
+    opacity:0;
+    animation:fadeIn 1.3s ease-in-out forwards;
+  }
+
+  /* Tagline renk geçişi + parlama efekti */
+  #tagline {
+    transition: color .35s ease, text-shadow .35s ease, filter .35s ease;
+  }
+
+  /* Tema değişiminde kısa parlama */
+  @keyframes hueGlow {
+    0%   { text-shadow: 0 0 0px transparent; filter: brightness(1); }
+    40%  { text-shadow: 0 0 14px color-mix(in oklab, var(--accent) 65%, transparent);
+           filter: brightness(1.15); }
+    100% { text-shadow: 0 0 0px transparent; filter: brightness(1); }
+  }
+  .tagline-pulse { animation: hueGlow 600ms ease; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="title">
-    <div class="topbar">
-      <div class="logo"></div>
-      <h1>Ahmet’s Smart Spotify — Zeka Modu</h1>
+  <!-- TITLE -->
+  <div class="title fadein" style="margin-bottom:28px;animation:fadeIn 1.3s ease-in-out;">
+    <div class="topbar" style="flex-direction:column;align-items:flex-start;gap:4px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="logo" style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 18px rgba(147,51,234,0.25)"></div>
+        <h1 style="font-size:30px;font-weight:700;letter-spacing:-0.6px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:0;">
+          SpotYAI.ai
+        </h1>
+      </div>
+      <p id="tagline" style="margin:2px 0 0 2px;font-size:14px;color:var(--muted);font-style:italic;">
+        Duygularini calan yapay zeka
+      </p>
     </div>
-    <div class="flex">
-      <button class="ghost" id="btnHealth">Health</button>
+
+    <div class="flex" style="align-items:flex-start;">
       <span class="pill">
         <input id="public" type="checkbox" checked>
         public
@@ -87,7 +119,7 @@
     <div class="row" style="margin-top:10px">
       <div>
         <label>Playlist adı</label>
-        <input id="plName" placeholder="bos birakirsan öneririm" />
+        <input id="plName" placeholder="bos birakirsan oneririm" />
       </div>
       <div>
         <label>TR oranı (%)</label>
@@ -101,14 +133,14 @@
     <div class="row" style="margin-top:10px">
       <div>
         <label>Açıklama</label>
-        <textarea id="plDesc" rows="2" placeholder="bos birakirsan öneririm"></textarea>
+        <textarea id="plDesc" rows="2" placeholder="bos birakirsan oneririm"></textarea>
       </div>
       <div>
         <label>Kapak (JPEG, &lt;256 KB)</label>
         <input id="cover" type="file" accept="image/*" />
         <div class="flex" style="margin-top:8px">
           <img id="coverPrev" class="cover" alt="kapak" />
-          <span class="hint">PNG seçsen de arka planda JPEG'e cevrilip 256 KB altina sikistirilir.</span>
+          <span class="hint">PNG secsen de arka planda JPEG'e cevrilip 256 KB altina sikistirilir.</span>
         </div>
       </div>
     </div>
@@ -150,10 +182,19 @@
     document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
   }
   function toggleTheme(){
-    const cur = document.documentElement.getAttribute("data-theme")==="light" ? "light":"dark";
-    const nxt = cur==="light" ? "dark":"light";
-    document.documentElement.setAttribute("data-theme", nxt);
+    const root = document.documentElement;
+    const cur  = root.getAttribute("data-theme")==="light" ? "light" : "dark";
+    const nxt  = cur==="light" ? "dark" : "light";
+    root.setAttribute("data-theme", nxt);
     localStorage.setItem("ah_theme", nxt);
+
+    // Tagline'a mini parlama efekti
+    const t = document.getElementById("tagline");
+    if (t) {
+      t.classList.remove("tagline-pulse"); // reset
+      void t.offsetWidth;                  // reflow
+      t.classList.add("tagline-pulse");    // tetikleme
+    }
   }
 
   // LOCAL
@@ -194,7 +235,7 @@
 
           let q = qualityStart;
           let dataUrl = canvas.toDataURL('image/jpeg', q);
-          while (dataUrl.length/1.37 > maxKB*1024 && q > 0.3) { // 1.37 ~ base64 overhead
+          while (dataUrl.length/1.37 > maxKB*1024 && q > 0.3) { // ~ base64 overhead
             q -= 0.1;
             dataUrl = canvas.toDataURL('image/jpeg', q);
           }
@@ -217,7 +258,7 @@
       const jpegDataUrl = await imgToJpegDataURL(f, 256, 0.9);
       const sizeApprox = Math.round(jpegDataUrl.length/1.37/1024);
       if(sizeApprox > 256){
-        setOut("Kapak 256 KB altina düsürülemedi ("+sizeApprox+" KB). Daha kucuk bir gorsel sec.", false);
+        setOut("Kapak 256 KB altina dusurulemedi ("+sizeApprox+" KB). Daha kucuk bir gorsel sec.", false);
         coverDataURL=null; return;
       }
       coverDataURL = jpegDataUrl;
@@ -337,7 +378,6 @@
     window.open(`${host}/history_reco?user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}&size=40&ratio_tr=20&public=0`, "_blank");
   };
 
-  $("#btnHealth").onclick = ()=> window.open(`${host}/health`, "_blank");
   $("#btnTheme").onclick = toggleTheme;
 
   // INIT
