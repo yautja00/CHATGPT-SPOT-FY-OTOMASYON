@@ -17,7 +17,7 @@
   .title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
   .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
   h1{font-size:22px;margin:0}
-  .card{background:var(--card);border:1px solid #1e2a57; border-color: color-mix(in oklab, var(--text) 12%, transparent); border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+  .card{background:var(--card);border:1px solid #1e2a57;border-color: color-mix(in oklab, var(--text) 12%, transparent);border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media (max-width:800px){.row{grid-template-columns:1fr}}
   label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
@@ -47,6 +47,7 @@
       <h1>Ahmet’s Smart Spotify — Zeka Modu</h1>
     </div>
     <div class="flex">
+      <button class="ghost" id="btnHealth">Health</button>
       <span class="pill">
         <input id="public" type="checkbox" checked>
         public
@@ -77,6 +78,12 @@
     <div class="section-title">2) Hislerini Yaz (Zeka Modu)</div>
     <label>Ör: “yagmurlu huzunlu gece arabada 40 tr25 private” veya “enerjik kosu sabahi 50 public”</label>
     <textarea id="nlpText" rows="2" placeholder="metnini yaz..."></textarea>
+
+    <p class="hint" style="margin-top:8px">
+      NLP ipuclari: <em>yorgun, kahve, huzun, nostalji, gece, araba, kosu, gym, mutlu, romantik, yuksek tempo, sakin, lo-fi, indie, synthwave</em> gibi kelimeler
+      enerji/valans/tempo/ens. hedeflerini akilli sekilde etkiler. <strong>tr25</strong> gibi yuzde, <strong>40</strong> gibi sayi, <strong>public/private</strong> gibi gizlilik ayarlari metinden de okunur.
+    </p>
+
     <div class="row" style="margin-top:10px">
       <div>
         <label>Playlist adı</label>
@@ -98,10 +105,10 @@
       </div>
       <div>
         <label>Kapak (JPEG, &lt;256 KB)</label>
-        <input id="cover" type="file" accept="image/jpeg,image/jpg,image/png" />
+        <input id="cover" type="file" accept="image/*" />
         <div class="flex" style="margin-top:8px">
           <img id="coverPrev" class="cover" alt="kapak" />
-          <span class="hint">PNG yüklenirse Spotify reddedebilir; JPEG tercih et.</span>
+          <span class="hint">PNG seçsen de arka planda JPEG'e cevrilip 256 KB altina sikistirilir.</span>
         </div>
       </div>
     </div>
@@ -135,7 +142,11 @@
 
   // THEME
   function loadTheme(){
-    const t = localStorage.getItem("ah_theme") || "dark";
+    let t = localStorage.getItem("ah_theme");
+    if(!t){
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      t = prefersLight ? "light" : "dark";
+    }
     document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
   }
   function toggleTheme(){
@@ -157,7 +168,9 @@
     $("#public").checked = (localStorage.getItem("ah_public") || "1") === "1";
   }
   function setOut(obj, ok=true){
-    const box = $("#out"); box.classList.remove("err","ok"); box.classList.add(ok ? "ok" : "err");
+    const box = $("#out");
+    box.classList.remove("err","ok");
+    box.classList.add(ok ? "ok" : "err");
     try{ box.textContent = typeof obj === "string" ? obj : JSON.stringify(obj, null, 2); }
     catch(e){ box.textContent = obj; }
   }
@@ -166,23 +179,73 @@
     if(resp && resp.created){ window.open(resp.created,"_blank"); }
   }
 
-  // FILE -> DATA URL
+  // IMG -> JPEG base64 (256 KB altina sikistir)
+  function imgToJpegDataURL(file, maxKB=256, qualityStart=0.9){
+    return new Promise((resolve, reject)=>{
+      const img = new Image();
+      const fr = new FileReader();
+      fr.onload = () => {
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+
+          let q = qualityStart;
+          let dataUrl = canvas.toDataURL('image/jpeg', q);
+          while (dataUrl.length/1.37 > maxKB*1024 && q > 0.3) { // 1.37 ~ base64 overhead
+            q -= 0.1;
+            dataUrl = canvas.toDataURL('image/jpeg', q);
+          }
+          resolve(dataUrl);
+        };
+        img.onerror = () => reject(new Error("Gorsel yuklenemedi"));
+        img.src = fr.result;
+      };
+      fr.onerror = () => reject(new Error("Dosya okunamadi"));
+      fr.readAsDataURL(file);
+    });
+  }
+
+  // FILE -> DATA URL (PNG bile olsa otomatik JPEG & 256KB)
   let coverDataURL = null;
-  $("#cover").addEventListener("change", ev=>{
+  $("#cover").addEventListener("change", async ev=>{
     const f = ev.target.files?.[0];
     if(!f){ coverDataURL=null; $("#coverPrev").src=""; return; }
-    const limit = 256*1024;
-    if(f.size > limit){
-      setOut("Kapak 256 KB üstü: " + Math.round(f.size/1024) + " KB", false);
-      coverDataURL=null; return;
+    try{
+      const jpegDataUrl = await imgToJpegDataURL(f, 256, 0.9);
+      const sizeApprox = Math.round(jpegDataUrl.length/1.37/1024);
+      if(sizeApprox > 256){
+        setOut("Kapak 256 KB altina düsürülemedi ("+sizeApprox+" KB). Daha kucuk bir gorsel sec.", false);
+        coverDataURL=null; return;
+      }
+      coverDataURL = jpegDataUrl;
+      $("#coverPrev").src = coverDataURL;
+    }catch(e){
+      setOut("Gorsel hazirlanamadi: "+e.message, false);
+      coverDataURL=null;
     }
-    const fr = new FileReader();
-    fr.onload = ()=>{ coverDataURL = fr.result; $("#coverPrev").src = coverDataURL; };
-    fr.onerror = ()=>{ setOut("Gorsel okunamadı", false); };
-    fr.readAsDataURL(f);
   });
 
- <script>
+  // JSON guvenli fetch (HTML/text gelirse yakala; 1 kez retry)
+  async function safeFetchJSON(url, options={}, retry=true){
+    const res = await fetch(url, options);
+    const ct  = res.headers.get("content-type") || "";
+    if (ct.includes("application/json")) {
+      const j = await res.json();
+      return { ok: res.ok && (j.ok !== false), data: j, status: res.status };
+    } else {
+      const text = await res.text();
+      if (retry) {
+        await new Promise(r=>setTimeout(r, 1200)); // Render isinma/sleep
+        return safeFetchJSON(url, options, false);
+      }
+      return { ok: false, data: { ok:false, error: text, status: res.status }, status: res.status };
+    }
+  }
+
+  // POST JSON (nlp_create vs)
   async function postJSON(path, payload){
     saveLocal();
     const u = $("#user").value.trim();
@@ -190,19 +253,25 @@
     if(!u){ setOut("user bos olamaz", false); return; }
     if(!k){ setOut("key (HOOK_SECRET) gerekli", false); return; }
     const url = `${host}${path}?user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}`;
+
+    // buton kilidi
+    const btns = [$("#btnCreate"), $("#btnSuggest")];
+    btns.forEach(b=> b && (b.disabled = true, b.style.opacity = 0.7));
+
     try{
-      const r = await fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)});
-      const ct = r.headers.get("content-type") || "";
-      // Sunucu sleep/warmup/HTML hata sayfası döndürürse JSON parse etme
-      const data = ct.includes("application/json") ? await r.json() : { ok:false, error: await r.text() };
-      setOut(data, !!data.ok && !data.error);
+      const { ok, data } = await safeFetchJSON(url, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(payload)
+      });
+      setOut(data, ok);
       openIfLink(data);
     }catch(e){
       setOut("Baglanti hatasi: "+e.message, false);
+    }finally{
+      btns.forEach(b=> b && (b.disabled = false, b.style.opacity = 1));
     }
   }
-</script>
-
 
   // BUTTONS
   $("#btnAuth").onclick = ()=>{
@@ -215,30 +284,40 @@
   $("#btnSuggest").onclick = async ()=>{
     const q = $("#nlpText").value || "";
     const payload = { q };
-    const u = $("#user").value.trim(); const k = $("#key").value.trim();
+    const u = $("#user").value.trim();
+    const k = $("#key").value.trim();
     if(!k){ setOut("key (HOOK_SECRET) gerekli", false); return; }
     try{
-      const r = await fetch(`${host}/suggest_names?user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}`, {
-        method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)
+      const url = `${host}/suggest_names?user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}`;
+      const { ok, data } = await safeFetchJSON(url, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(payload)
       });
-      const j = await r.json();
-      if(!j.ok){ setOut(j, false); return; }
-      if(j.suggestions && j.suggestions.length){
-        $("#plName").value = j.suggestions[0].name;
-        $("#plDesc").value = j.suggestions[0].desc;
+      if(ok && data.suggestions && data.suggestions.length){
+        $("#plName").value = data.suggestions[0].name;
+        $("#plDesc").value = data.suggestions[0].desc;
       }
-      setOut(j, true);
-    }catch(e){ setOut("oneri hatasi: "+e.message, false); }
+      setOut(data, ok);
+    }catch(e){
+      setOut("oneri hatasi: "+e.message, false);
+    }
   };
 
   $("#btnCreate").onclick = ()=>{
+    // basit dogrulama
+    let sz = Number($("#size").value || 40);
+    let trp = Number($("#tr").value || 20);
+    if(isNaN(sz) || sz < 1 || sz > 300){ setOut("Sarki sayisi 1-300 arasi olmali.", false); return; }
+    if(isNaN(trp) || trp < 0 || trp > 100){ setOut("TR orani 0-100 arasi olmali.", false); return; }
+
     const payload = {
       q: $("#nlpText").value || "",
       name: ($("#plName").value || "").trim(),
       description: ($("#plDesc").value || "").trim(),
       public: $("#public").checked,
-      size: Number($("#size").value || 40),
-      ratio_tr: Number($("#tr").value || 20),
+      size: sz,
+      ratio_tr: trp,
       max_per_artist: 2,
       sim_guard: true,
       cover_data_url: coverDataURL
@@ -250,12 +329,15 @@
     const u = $("#user").value.trim() || "ahmet";
     window.open(`${host}/profile?user=${encodeURIComponent(u)}`, "_blank");
   };
+
   $("#btnHistoryMix").onclick = ()=>{
-    const u = $("#user").value.trim(); const k = $("#key").value.trim();
+    const u = $("#user").value.trim();
+    const k = $("#key").value.trim();
     if(!k){ setOut("key (HOOK_SECRET) gerekli", false); return; }
     window.open(`${host}/history_reco?user=${encodeURIComponent(u)}&key=${encodeURIComponent(k)}&size=40&ratio_tr=20&public=0`, "_blank");
   };
 
+  $("#btnHealth").onclick = ()=> window.open(`${host}/health`, "_blank");
   $("#btnTheme").onclick = toggleTheme;
 
   // INIT
