@@ -79,6 +79,19 @@
         <input id="tr" type="number" min="0" max="100" value="20" />
       </div>
     </div>
+    <div class="grid3" style="margin-top:10px">
+  <div>
+    <label>Keşif modu</label>
+    <select id="discover">
+      <option value="0">Kapalı</option>
+      <option value="1">Açık</option>
+    </select>
+  </div>
+  <div>
+    <label>Artist limiti</label>
+    <input id="artistLimit" type="number" min="1" max="5" value="2" />
+  </div>
+</div>
     <div class="flex" style="margin-top:10px">
       <span class="pill"><input id="public" type="checkbox" checked> public</span>
       <button id="btnSimple">Playlist Oluştur</button>
@@ -163,11 +176,17 @@
     const size = $("#size").value || 40;
     const tr   = $("#tr").value || 20;
     const pub  = $("#public").checked ? 1 : 0;
-    call(`/make_playlist?mood=${encodeURIComponent(mood)}&size=${encodeURIComponent(size)}&ratio_tr=${encodeURIComponent(tr)}&public=${encodeURIComponent(pub)}`);
+   const disc = $("#discover").value;
+const al   = $("#artistLimit").value || 2;
+call(`/make_playlist?mood=${encodeURIComponent(mood)}&size=${encodeURIComponent(size)}&ratio_tr=${encodeURIComponent(tr)}&public=${encodeURIComponent(pub)}&discover=${encodeURIComponent(disc)}&artist_limit=${encodeURIComponent(al)}`);
+
   };
   $("#btnNlp").onclick = ()=>{
     const q = $("#nlpText").value || "focus 30 tr10 private";
-    call(`/nlp?q=${encodeURIComponent(q)}`);
+   const disc = $("#discover").value;
+const al   = $("#artistLimit").value || 2;
+call(`/nlp?q=${encodeURIComponent(q)}&discover=${encodeURIComponent(disc)}&artist_limit=${encodeURIComponent(al)}`);
+
   };
   $("#btnProfileView").onclick = ()=>{
     const u = $("#user").value.trim() || "ahmet";
