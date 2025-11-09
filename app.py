@@ -102,6 +102,73 @@ def _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True):
         count[aid] = count.get(aid, 0) + 1
 
     return ["spotify:track:" + x["id"] for x in kept]
+# --- keşif modu: popülerlik tavanı ---
+def _apply_popularity_cap(sp, uris, cap=45):
+    if not uris:
+        return uris
+    tids = [u.split(":")[-1] for u in uris]
+    out = []
+    for i in range(0, len(tids), 50):
+        meta = sp.tracks(tids[i:i+50])["tracks"]
+        for t, u in zip(meta, uris[i:i+50]):
+            if t and t.get("popularity", 100) <= cap:
+                out.append(u)
+        time.sleep(0.05)
+    return out if len(out) >= max(10, len(uris)//3) else uris
+# --- diversity filter (artist limiti + benzerlik korumasi) ---
+def _filter_diversity(sp, uris, max_per_artist=2, sim_guard=True):
+    if not uris:
+        return uris
+    tids = [u.split(":")[-1] for u in uris]
+    meta = sp.tracks(tids)["tracks"]
+    kept = []
+    count = {}
+    feats_cache = {}
+
+    def feat(tid):
+        if tid not in feats_cache:
+            try:
+                feats_cache[tid] = sp.audio_features([tid])[0]
+            except Exception:
+                feats_cache[tid] = None
+            time.sleep(0.02)
+        return feats_cache[tid]
+
+    import math
+    def cosine(v1, v2):
+        a = sum(x*y for x,y in zip(v1,v2))
+        n1 = math.sqrt(sum(x*x for x in v1)); n2 = math.sqrt(sum(y*y for y in v2))
+        return a / (n1*n2 + 1e-9)
+
+    for t, u in zip(meta, uris):
+        if not t:
+            continue
+        aid = (t["artists"][0]["id"] if t.get("artists") else "na")
+        if count.get(aid, 0) >= max_per_artist:
+            continue
+        # benzerlik korumasi (son 15 ile karsilastir)
+        if sim_guard and kept:
+            f1 = feat(t["id"])
+            if f1:
+                v1 = [f1.get("energy"), f1.get("danceability"), f1.get("valence"), f1.get("instrumentalness")]
+                if None not in v1:
+                    similar = False
+                    for kt in kept[-15:]:
+                        f2 = feat(kt["id"])
+                        if not f2:
+                            continue
+                        v2 = [f2.get("energy"), f2.get("danceability"), f2.get("valence"), f2.get("instrumentalness")]
+                        if None in v2:
+                            continue
+                        if cosine(v1, v2) > 0.97:
+                            similar = True
+                            break
+                    if similar:
+                        continue
+        kept.append(t)
+        count[aid] = count.get(aid, 0) + 1
+
+    return ["spotify:track:" + x["id"] for x in kept]
 
 def _avg_dict(dicts):
     if not dicts: return {}
@@ -304,15 +371,42 @@ def callback():
 
 @app.route("/make_playlist")
 def make_playlist():
-    user=_pick_user(); sp=_get_sp(user)
-    if not sp: return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
-    name=(request.args.get("name") or _title(user, request.args.get("mood","night_drive"))).strip()
-    mood=request.args.get("mood","night_drive").strip()
-    size=max(1,min(300,int(request.args.get("size",40))))
-    ratio=max(0,min(100,int(request.args.get("ratio_tr",30))))
-    public=_b(request.args.get("public","0"), False)
-    try: return jsonify(_make(sp,name,mood,size,ratio,public))
-    except Exception as e: return jsonify({"error":str(e)}),500
+    user = _pick_user(); sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first."}), 401
+
+    name = (request.args.get("name") or _title(user, request.args.get("mood","night_drive"))).strip()
+    mood = request.args.get("mood","night_drive").strip()
+    size = max(1, min(300, int(request.args.get("size", 40))))
+    ratio = max(0, min(100, int(request.args.get("ratio_tr", 30))))
+    public = _b(request.args.get("public","0"), False)
+
+    # yeni parametreler
+    discover = request.args.get("discover") in ("1","true","yes","on")
+    artist_limit = int(request.args.get("artist_limit", 2))
+
+    try:
+        # havuzu olustur
+        uris = _pool(sp, mood, size, ratio)
+
+        # çeşitlilik filtresi
+        uris = _filter_diversity(sp, uris, max_per_artist=artist_limit, sim_guard=True)[:size]
+
+        # keşif açıksa popülerlik tavanı uygula
+        if discover:
+            uris = _apply_popularity_cap(sp, uris, cap=45)
+
+        # playlist yaz
+        desc = f"Auto-generated • mood={mood} • TR={ratio}% • discover={'on' if discover else 'off'} • artist_limit={artist_limit}"
+        pid  = _ensure_playlist(sp, name, public, desc)
+        _replace(sp, pid, uris)
+        pl = sp.playlist(pid)
+
+        return jsonify({"ok": True, "name": pl.get("name"), "link": pl["external_urls"]["spotify"],
+                        "size": len(uris), "mood": mood, "ratio_tr": ratio, "public": public,
+                        "discover": discover, "artist_limit": artist_limit})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route("/hook", methods=["GET","POST"])
 def hook():
