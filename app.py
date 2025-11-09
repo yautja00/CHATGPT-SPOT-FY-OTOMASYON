@@ -479,6 +479,16 @@ def _after(resp):
     return resp
 
 # ====== ROUTES (UI) ======
+# --- PROFIL ROUTE (hem /profile hem /profile/) ---
+@app.route("/profile")
+@app.route("/profile/")
+def profile_view():
+    user = (request.args.get("user") or DEFAULT_USER).lower()
+    sp = _get_sp(user)
+    if not sp:
+        return jsonify({"error":"Not authorized. Open /authorize?user=<name> first.", "user": user}), 401
+    prof = _build_profile(sp, user)
+    return jsonify({"ok": True, "user": user, "profile": prof})
 
 @app.route("/")
 def ui_root():
@@ -621,6 +631,12 @@ def nlp_create():
     if body.get("mood"):  # UI zorla override ederse
         mood = body.get("mood")
 
+@app.errorhandler(404)
+def not_found(e):
+    if _check_secret():
+        routes = sorted([str(r) for r in app.url_map.iter_rules()])
+        return jsonify({"error":"not found","path":request.path,"routes":routes}), 404
+    return jsonify({"error":"not found","path":request.path}), 404
     # hedefler (dinleme profili ile hafif harman)
     try:
         prof_hist = _history_profile(sp) or {}
